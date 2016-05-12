@@ -9,31 +9,49 @@
 import Foundation
 import GameplayKit
 
-class CardPack {
+class CardPack
+{
     var cards = [Card]();
     
     //A l'initialisation, nous remplissons un tableau avec 6 jeux de cartes et nous mélangons.
     //Nous devrons ensuite définir le talon.
-    init(){
+    init()
+    {
         //On ajoutte 6 jeux de cartes.
-        for _ in 1...6{
+        for _ in 1...6
+        {
             self.cards.appendContentsOf(getOnePack());
         }
         //On mélange le tout 3 fois.
-        for _ in 0...2{
+        for _ in 0...2
+        {
             shuffleCardPack();
-        }
+        }    }
+    
+    // Fonction retournant une carte
+    func GetFirstCard() -> Card
+    {
+        var retour : Card;
+        retour = cards.first!;
+        
+        cards.removeAtIndex(0);
+        
+        return retour;
     }
     
     //Fonction retournant un jeux de 52 cartes.
-    func getOnePack()-> [Card]{
+    func getOnePack()-> [Card]
+    {
         var retour = [Card]();
         //Pour chaque couleur
-        for i in 1...4{
+        for i in 1...4
+        {
             //Pour chaque valeur
-            for j in 1...13{
+            for j in 1...13
+            {
                 //En fonction de la couleur
-                switch i {
+                switch i
+                {
                 case 1:
                     retour.append(Card(color: Color.Carreau, value: j));
                 case 2:
@@ -48,6 +66,7 @@ class CardPack {
                 }
             }
         }
+        
         return retour;
     }
     
@@ -55,5 +74,5 @@ class CardPack {
         //Utilisation de l'algorithme de Fisher-Yates impléménté dans GameplayKit
         self.cards = GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(self.cards) as! [Card];
     }
-
+    
 }
