@@ -11,13 +11,16 @@ import GameplayKit
 
 class CardPack
 {
+    // Cartes du sabot
     var cards = [Card]();
+    // Cartes brûlées
+    var burnCards = [Card]();
     
     //A l'initialisation, nous remplissons un tableau avec 6 jeux de cartes et nous mélangons.
     //Nous devrons ensuite définir le talon.
     init()
     {
-        //On ajoutte 6 jeux de cartes.
+        //On ajoute 6 jeux de cartes.
         for _ in 1...6
         {
             self.cards.appendContentsOf(getOnePack());
@@ -26,17 +29,18 @@ class CardPack
         for _ in 0...2
         {
             shuffleCardPack();
-        }    }
+        }
+    }
     
     // Fonction retournant une carte
     func GetFirstCard() -> Card
     {
-        var retour : Card;
-        retour = cards.first!;
+        var cardToGive : Card;
+        cardToGive = cards.first!;
         
-        cards.removeAtIndex(0);
+        self.cards.removeAtIndex(0);
         
-        return retour;
+        return cardToGive;
     }
     
     //Fonction retournant un jeux de 52 cartes.

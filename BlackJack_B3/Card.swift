@@ -39,13 +39,11 @@ class Card
         
         switch(value)
         {
-            // L'As est valorisé à 11 points
-        case 1:
-            self.realValue = 11;
             // Du 10 au Roi, la carte est valorisée à 10 points
         case 10, 11, 12, 13:
             self.realValue = 10;
-            // Toutes les autres sont valorisée à leur valeur nominale (du 2 au 9)
+            // Toutes les autres sont valorisée à leur valeur nominale (du 1 au 9)
+            // L'As pourra être valorisé à 11 points suivant les cas en jeu
         default:
             self.realValue = value;
         }

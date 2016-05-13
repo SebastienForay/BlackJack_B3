@@ -17,27 +17,21 @@ class Deck
     
     var numberOfPlayers: Int = 0;
     
-    init()
+    init(nbPlayers: Int)
     {
-        repeat
-        {
-            print("Combien de joueurs dans la partie ? (1 - 8)");
-            let input = readLine();
-            self.numberOfPlayers = Int(input!)!;
-        }
-            while(self.numberOfPlayers < 1 || self.numberOfPlayers > 8)
+        self.numberOfPlayers = nbPlayers;
         
         for i in 0...self.numberOfPlayers
         {
             if(i != self.numberOfPlayers)
             {
-                players.insert(Player(), atIndex: 0);
+                self.players.insert(Player(), atIndex: 0);
             }
             else
             {
                 // Ajout du croupier en dernier
-                players.insert(Player(), atIndex: numberOfPlayers);
-                players[numberOfPlayers].isCroupier = true;
+                self.players.insert(Player(), atIndex: numberOfPlayers);
+                self.players[numberOfPlayers].isCroupier = true;
             }
         }
         
@@ -48,5 +42,10 @@ class Deck
                 players[i].GiveCard(cardpack.GetFirstCard());
             }
         }
+        
+        let randPlayer = Int(arc4random_uniform(UInt32(self.numberOfPlayers)) + 1);
+        let bcPosition = self.players[randPlayer].AskBlueCardPosition();
+        
+        self.cardpack.cards.insert(Card(color: Color.Bleu, value: 0), atIndex: bcPosition);
     }
 }

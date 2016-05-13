@@ -41,11 +41,28 @@ class Player
         self.totalPoints += cardToAdd.realValue;
     }
     
-    func PrintDeck()
+    func GetDeck()
     {
         for i in 0...cards.count-1
         {
-            print("\(cards[i].value) de \(cards[i].color) (\(cards[i].realValue)) : \(cards[i].visible)");
+            if cards[i].visible
+            {
+                print("\(cards[i].value) de \(cards[i].color) (\(cards[i].realValue))");
+            }
         }
+    }
+    
+    func AskBlueCardPosition() -> Int
+    {
+        var pos: Int = 0;
+        
+        repeat
+        {
+            print("A quelle position voulez-vous mettre la carte bleue ?");
+            pos = 23;
+        }
+        while(pos < 6 || pos > 290);
+        
+        return pos;
     }
 }
