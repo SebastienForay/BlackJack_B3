@@ -15,20 +15,12 @@ class GameViewController: UIViewController, UITextFieldDelegate
     @IBOutlet weak var txtNbPlayers: UITextField!
     @IBOutlet weak var playButton: UIButton!
     
-    
-    var nbPlayersInit: Int = 0;
-    var canLaunchGame: Bool = false;
-    
-    
-
     @IBAction func LaunchGame(sender: UIButton)
     {
         
         if let text = self.txtNbPlayers.text where !text.isEmpty
         {
-            nbPlayersInit = Int(self.txtNbPlayers.text!)!;
-            
-            let deck = Deck(nbPlayers: nbPlayersInit);
+            let deck = Deck(nbPlayers: Int(self.txtNbPlayers.text!)!);
             
             for i in 0...deck.numberOfPlayers
             {
