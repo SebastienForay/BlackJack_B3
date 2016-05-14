@@ -51,18 +51,4 @@ class Player
             }
         }
     }
-    
-    func AskBlueCardPosition() -> Int
-    {
-        var pos: Int = 0;
-        
-        repeat
-        {
-            print("A quelle position voulez-vous mettre la carte bleue ?");
-            pos = 23;
-        }
-        while(pos < 6 || pos > 290);
-        
-        return pos;
-    }
 }

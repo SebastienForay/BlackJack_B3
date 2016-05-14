@@ -15,37 +15,21 @@ class Deck
     //Une table a un sabot
     var cardpack = CardPack();
     
-    var numberOfPlayers: Int = 0;
-    
-    init(nbPlayers: Int)
+    init(blueCardPos: Int)
     {
-        self.numberOfPlayers = nbPlayers;
-        
-        for i in 0...self.numberOfPlayers
-        {
-            if(i != self.numberOfPlayers)
-            {
-                self.players.insert(Player(), atIndex: 0);
-            }
-            else
-            {
-                // Ajout du croupier en dernier
-                self.players.insert(Player(), atIndex: numberOfPlayers);
-                self.players[numberOfPlayers].isCroupier = true;
-            }
-        }
-        
+        self.players.insert(Player(), atIndex: 0);
+        // Ajout du croupier en dernier
+        self.players.append(Player());
+        self.players.last!.isCroupier = true;
+        //Ajout de la carte bleu
+        self.cardpack.setBlueCard(blueCardPos)
+        //Distribution des cartes
         for _ in 1...2
         {
-            for i in 0...players.count-1
+            for p in players
             {
-                players[i].GiveCard(cardpack.GetFirstCard());
+                p.GiveCard(cardpack.GetFirstCard());
             }
         }
-        
-        let randPlayer = Int(arc4random_uniform(UInt32(self.numberOfPlayers)) + 1);
-        let bcPosition = self.players[randPlayer].AskBlueCardPosition();
-        
-        self.cardpack.cards.insert(Card(color: Color.Bleu, value: 0), atIndex: bcPosition);
     }
 }

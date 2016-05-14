@@ -17,8 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQT-Hb-d9n">
-                                <rect key="frame" x="277" y="301" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQT-Hb-d9n">
+                                <rect key="frame" x="277" y="285" width="46" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.33604831560283688" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="Xt6-qP-lQw"/>
+                                </constraints>
                                 <state key="normal" title="Play !"/>
                                 <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="461" y="185" width="37" height="30"/>
@@ -27,8 +31,12 @@
                                     <action selector="LaunchGame:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Gey-TQ-kRn"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre de joueurs" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g3Y-2R-6Cs" userLabel="txtNbPlayers">
-                                <rect key="frame" x="252" y="209" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Position de la coupe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g3Y-2R-6Cs" userLabel="txtBlueCard">
+                                <rect key="frame" x="224" y="193" width="153" height="30"/>
+                                <color key="backgroundColor" red="0.66508507853403143" green="0.66508507853403143" blue="0.66508507853403143" alpha="0.16270500886524822" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="153" id="w05-h9-dek"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -38,15 +46,21 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gQT-Hb-d9n" firstAttribute="top" secondItem="g3Y-2R-6Cs" secondAttribute="bottom" constant="62" id="Dn7-qa-lMe"/>
+                            <constraint firstItem="g3Y-2R-6Cs" firstAttribute="centerX" secondItem="gQT-Hb-d9n" secondAttribute="centerX" id="IOH-3g-Rho"/>
+                            <constraint firstItem="gQT-Hb-d9n" firstAttribute="centerY" secondItem="8cE-Ql-DTi" secondAttribute="centerY" id="MHh-jR-IaO"/>
+                            <constraint firstItem="g3Y-2R-6Cs" firstAttribute="centerX" secondItem="8cE-Ql-DTi" secondAttribute="centerX" id="vex-w2-55o"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="playButton" destination="gQT-Hb-d9n" id="GLA-ED-3Cb"/>
-                        <outlet property="txtNbPlayers" destination="g3Y-2R-6Cs" id="j5l-Zh-tpI"/>
+                        <outlet property="txtBlueCard" destination="g3Y-2R-6Cs" id="UXg-zI-kBU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="399.75" y="366"/>
+            <point key="canvasLocation" x="399" y="366"/>
         </scene>
     </scenes>
 </document>

@@ -12,34 +12,40 @@ import SceneKit
 
 class GameViewController: UIViewController, UITextFieldDelegate
 {
-    @IBOutlet weak var txtNbPlayers: UITextField!
+    @IBOutlet weak var txtBlueCard: UITextField!
     @IBOutlet weak var playButton: UIButton!
     
     @IBAction func LaunchGame(sender: UIButton)
     {
         
-        if let text = self.txtNbPlayers.text where !text.isEmpty
+        if let text = self.txtBlueCard.text where !text.isEmpty
         {
-            let deck = Deck(nbPlayers: Int(self.txtNbPlayers.text!)!);
-            
-            for i in 0...deck.numberOfPlayers
-            {
-                print("Player's \(i) Deck :");
-                deck.players[i].GetDeck();
+            //On cast le texte
+            let blueCardPos = Int(text)!
+            //On verifie que le nombre est bien dans le tas
+            if(blueCardPos>0 && blueCardPos<312){
+                //On crée le Deck avec la position de la carte bleu dans le tas
+                let deck = Deck(blueCardPos: blueCardPos);
+            }else{
+                sendAlertNumber();
             }
-   
         }else{
-            let alert = UIAlertController(title: "Nombre invalide", message: "Vous avez rentré un nombre de joueur invalide", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
+            sendAlertNumber();
         }
+    }
+    //Popup en cas d'erreur lors de la saisie de la position de la carte bleu.
+    func sendAlertNumber(){
+        let alert = UIAlertController(title: "Nombre invalide", message: "Vous avez rentré un nombre de joueur invalide", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+        self.txtBlueCard.text = "";
     }
     //On personnalise le champ de text pour n'accepter que les chiffres et afficher le bon clavier.
     override func viewDidLoad()
     {
         super.viewDidLoad();
-        txtNbPlayers.delegate = self;
-        txtNbPlayers.keyboardType = UIKeyboardType.NumberPad;
+        txtBlueCard.delegate = self;
+        txtBlueCard.keyboardType = UIKeyboardType.NumberPad;
     }
     //Fonction pour ne prendre que les chiffres (delegate avec comparaison du charset src:http://stackoverflow.com/questions/26919854/how-can-i-declare-that-a-text-field-can-only-contain-an-integer
     

@@ -79,4 +79,35 @@ class CardPack
         self.cards = GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(self.cards) as! [Card];
     }
     
+    func setBlueCard(position: Int)  {
+        if(0<position && position<312){
+            self.cards.insert(Card(color: .Bleu, value: 0), atIndex: position)
+            cutPack();
+            //On ajoute la carte rouge
+            self.cards.insert(Card(color: .Rouge, value: 0 ),atIndex: 300);
+            //On Brule les 5 premières cartes
+            for _ in 0...4{
+                self.burnCards.append(self.cards.removeAtIndex(0));
+            }
+        }
+    }
+    //Coupe la tas à partir de la carte bleu
+    func cutPack(){
+        var blueEncountered: Bool = false;
+        for i in 1...312{
+            if(self.cards[i].color == Color.Bleu){
+                blueEncountered = true;
+            }
+            else if(blueEncountered){
+                self.cards.insert(self.cards.removeAtIndex(i), atIndex: 0);
+            }
+        }
+    }
+    //DEBUG
+    func printSabot(){
+        for c in self.cards {
+            print(c.color.rawValue);
+        }
+    }
+    
 }
