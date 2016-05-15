@@ -78,4 +78,9 @@ class Bet
     {
         self.chipsInBet.removeAll();
     }
+    // Le joueur perd son assurance
+    func LoseInsurance()
+    {
+        self.insuranceContent.removeAll();
+    }
 }
