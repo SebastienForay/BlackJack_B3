@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F101574B1CE7E29900A352DA /* Bet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F101574A1CE7E29900A352DA /* Bet.swift */; };
 		FAC6983C1CDCDC1C008BD63B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6983B1CDCDC1C008BD63B /* Card.swift */; };
 		FAC6983E1CDCDC91008BD63B /* CardPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6983D1CDCDC91008BD63B /* CardPack.swift */; };
 		FAC698401CE07ACF008BD63B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6983F1CE07ACF008BD63B /* Player.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F101574A1CE7E29900A352DA /* Bet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bet.swift; sourceTree = "<group>"; };
 		FAC6983B1CDCDC1C008BD63B /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Card.swift; sourceTree = "<group>"; };
 		FAC6983D1CDCDC91008BD63B /* CardPack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPack.swift; sourceTree = "<group>"; };
 		FAC6983F1CE07ACF008BD63B /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = ../Player.swift; sourceTree = "<group>"; };
@@ -71,10 +73,11 @@
 				FAF7F6DD1CD74029003A0386 /* Assets.xcassets */,
 				FAF7F6DF1CD74029003A0386 /* LaunchScreen.storyboard */,
 				FAF7F6E21CD74029003A0386 /* Info.plist */,
-				FAC6983F1CE07ACF008BD63B /* Player.swift */,
+				F101574A1CE7E29900A352DA /* Bet.swift */,
 				FAC6983B1CDCDC1C008BD63B /* Card.swift */,
 				FAC6983D1CDCDC91008BD63B /* CardPack.swift */,
 				FAC698411CE07C0A008BD63B /* Deck.swift */,
+				FAC6983F1CE07ACF008BD63B /* Player.swift */,
 			);
 			path = BlackJack_B3;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 				FAF7F6D91CD74029003A0386 /* GameViewController.swift in Sources */,
 				FAC6983C1CDCDC1C008BD63B /* Card.swift in Sources */,
 				FAC6983E1CDCDC91008BD63B /* CardPack.swift in Sources */,
+				F101574B1CE7E29900A352DA /* Bet.swift in Sources */,
 				FAC698401CE07ACF008BD63B /* Player.swift in Sources */,
 				FAF7F6D51CD74029003A0386 /* AppDelegate.swift in Sources */,
 			);
