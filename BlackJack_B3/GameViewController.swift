@@ -15,8 +15,6 @@ class GameViewController: UIViewController, UITextFieldDelegate
     @IBOutlet weak var txtBlueCard: UITextField!
     @IBOutlet weak var playButton: UIButton!
     
-    var deck: Deck;
-    
     @IBAction func LaunchGame(sender: UIButton)
     {
         
@@ -27,7 +25,7 @@ class GameViewController: UIViewController, UITextFieldDelegate
             //On verifie que le nombre est bien dans le tas
             if(blueCardPos>0 && blueCardPos<312){
                 //On crée le Deck avec la position de la carte bleu dans le tas
-                deck = Deck(blueCardPos: blueCardPos);
+                var deck = Deck(blueCardPos: blueCardPos);
             }else{
                 sendAlertNumber();
             }
@@ -73,8 +71,5 @@ class GameViewController: UIViewController, UITextFieldDelegate
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning();
         // Release any cached data, images, etc that aren't in use.
-    }
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
