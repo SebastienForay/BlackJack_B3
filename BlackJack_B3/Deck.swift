@@ -25,14 +25,6 @@ class Deck
         self.players.last!.isCroupier = true;
         //Ajout de la carte bleu
         self.cardpack.setBlueCard(blueCardPos)
-        //Distribution des cartes
-        for _ in 1...2
-        {
-            for p in players
-            {
-                p.GiveCard(self.GetCard());
-            }
-        }
     }
     
     // Récupère la première carte du cardpack et vérifie si c'est la rouge qui indique la fin du jeu
@@ -49,5 +41,17 @@ class Deck
         }
         
         return retour;
+    }
+    
+    // Distribution des cartes
+    func CardsDistribution()
+    {
+        for _ in 1...2
+        {
+            for p in self.players
+            {
+                p.GiveCard(self.GetCard());
+            }
+        }
     }
 }
