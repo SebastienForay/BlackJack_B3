@@ -25,7 +25,7 @@ class GameViewController: UIViewController, UITextFieldDelegate
             //On verifie que le nombre est bien dans le tas
             if(blueCardPos>0 && blueCardPos<312){
                 //On crée la partie avec la position de la carte bleu dans le tas
-                var game = Game(cardPos: blueCardPos);
+                var game = Game(cardPos: blueCardPos, view: self);
             }else{
                 sendAlertNumber();
             }

@@ -83,4 +83,12 @@ class Bet
     {
         self.insuranceContent.removeAll();
     }
+    //Récupère la valeur totale du bet.
+    func GetValueBet()->Int{
+        var total = 0;
+        for c in self.chipsInBet{
+            total+=c.rawValue;
+        }
+        return total;
+    }
 }

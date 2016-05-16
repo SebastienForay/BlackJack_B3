@@ -11,9 +11,11 @@ import Foundation
 class Game
 {
     var deck: Deck;
+    weak var view: GameViewController?;
     
-    init(cardPos: Int)
+    init(cardPos: Int, view: GameViewController?)
     {
         self.deck = Deck(blueCardPos: cardPos);
+        self.view = view;
     }
 }
