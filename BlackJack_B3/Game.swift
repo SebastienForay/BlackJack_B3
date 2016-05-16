@@ -31,8 +31,10 @@ class Game
     {
         repeat
         {
-            //TODO: Le joueur fait sa mise
+            // Le joueur fait sa mise
             
+            //TODO Changer de systeme par rapport aux boutons
+            view?.miser();
             // Distribution des cartes
             self.deck.CardsDistribution();
             
@@ -44,8 +46,8 @@ class Game
                 // Si le joueur a de quoi payer son assurance avec la moitié de sa mise initiale
                 if(self.player!.bet!.totalBetValue % (playerInitialBetValue / 2) == 0)
                 {
-                    //TODO: Popup pour demander s'il veut assurer
-                    
+                    // Popup pour demander s'il veut assurer
+                    view?.assurer();
                     
                     // si le joueur veut assurer:
                     if(self.player!.AssureBet())
