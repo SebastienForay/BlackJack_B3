@@ -12,12 +12,12 @@ class Game
 {
     // Table de jeu
     var deck: Deck;
-    weak var view: GameViewController?;
+    weak var view: DeckViewController?;
     
     weak var player: Player?;
     weak var croupier: Player?;
     
-    init(cardPos: Int, view: GameViewController?)
+    init(cardPos: Int, view: DeckViewController?)
     {
         self.deck = Deck(blueCardPos: cardPos);
         self.view = view;

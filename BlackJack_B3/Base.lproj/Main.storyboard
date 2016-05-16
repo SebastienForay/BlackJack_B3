@@ -91,10 +91,10 @@
             </objects>
             <point key="canvasLocation" x="268" y="136"/>
         </scene>
-        <!--DeckViewController-->
+        <!--Deck View Controller-->
         <scene sceneID="y0B-qe-atg">
             <objects>
-                <viewController title="DeckViewController" id="G30-jG-ssB" customClass="DeckViewController" sceneMemberID="viewController">
+                <viewController id="G30-jG-ssB" customClass="DeckViewController" customModule="BlackJack_B3" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lTC-4r-dRl"/>
                         <viewControllerLayoutGuide type="bottom" id="jem-03-7LL"/>

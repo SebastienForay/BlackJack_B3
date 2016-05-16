@@ -12,16 +12,15 @@ import SceneKit
 
 class DeckViewController: UIViewController
 {
-    @IBAction func test(sender: AnyObject) {
-        print("BLUE CARD ===\(self.blueCard)");
-    }
-    
     var blueCard:Int = 0;
     
     override func viewDidLoad()
     {
         super.viewDidLoad();
         print("BLUE CARD ===\(blueCard)");
+        //On crée la partie avec la position de la carte bleu dans le tas
+        var game = Game(cardPos: blueCard, view: self);
+        game.Play();
         
     }
         override func shouldAutorotate() -> Bool {
