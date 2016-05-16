@@ -18,7 +18,6 @@ class GameViewController: UIViewController, UITextFieldDelegate
     
     @IBAction func LaunchGame(sender: UIButton)
     {
-        
         if let text = self.txtBlueCard.text where !text.isEmpty
         {
             //On cast le texte
@@ -27,6 +26,7 @@ class GameViewController: UIViewController, UITextFieldDelegate
             if(blueCardPos>0 && blueCardPos<312){
                 //On crée la partie avec la position de la carte bleu dans le tas
                 var game = Game(cardPos: blueCardPos, view: self);
+                game.Play();
             }else{
                 sendAlertNumber();
             }
