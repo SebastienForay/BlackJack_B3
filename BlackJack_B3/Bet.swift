@@ -11,33 +11,33 @@ import Foundation
 class Bet
 {
     // Mise initiale
-    var initialBet = [Chip]();
-    // Contenu total de la mise du joueur
-    var chipsInBet = [Chip]();
+    var initialBet: Int = 0;
+    // Valeur totale de la mise du joueur
+    var totalBetValue: Int = 0;
     // Définie si la mise est assurée ou non
     var isAssured: Bool = false;
     // Valeur payée pour l'assurance (1/2  mise initiale)
     var insuranceValue: Int = 0;
-    // Contenu de l'assurance
-    var insuranceContent = [Chip]();
+    // Définie si l'assurance est payé ou non
+    var isInsurancePayed: Bool = false;
     
-    // Mise initiale
-    func InitialBet(initBet: [Chip])
+    init(initBet: Int)
     {
         self.initialBet = initBet;
         self.AddToBet(self.initialBet);
     }
-    // Jetons à ajouter à la mise
-    func AddToBet(valueToAdd: [Chip])
+    // Valeur à ajouter à la mise
+    func AddToBet(valueToAdd: Int)
     {
         // Si pas de mise initiale, ça la met
-        if(self.initialBet.count == 0)
+        if(self.initialBet == 0)
         {
-            self.InitialBet(valueToAdd);
+            self.initialBet = valueToAdd;
         }
+        // Sinon ça ajoute
         else
         {
-            self.chipsInBet.appendContentsOf(valueToAdd);
+            self.totalBetValue += valueToAdd;
         }
     }
     // Assure la mise en payant la moitié de la mise initiale
@@ -47,13 +47,10 @@ class Bet
     {
         var retour: Bool = false;
         
-        if(!self.isAssured && self.initialBet.count > 1)
+        // Si pas assuré, pas payé et mise initiale supérieure à 1
+        if(!self.isAssured && !self.isInsurancePayed && self.initialBet > 1)
         {
-            for i in 0...self.chipsInBet.count
-            {
-                self.insuranceValue += self.initialBet[i].rawValue;
-            }
-            self.insuranceValue /= 2;
+            self.insuranceValue = self.initialBet / 2;
             
             if(self.insuranceValue == shouldPay)
             {
@@ -63,32 +60,9 @@ class Bet
         return retour;
     }
     // Paye l'assurance
-    func PayInsurance(chipsToPay: [Chip])
+    func PayInsurance(valueToPay: Int)
     {
-        self.insuranceContent.appendContentsOf(chipsToPay);
         self.isAssured = true;
-    }
-    // Renvoi le contenu de la mise
-    func GetBetContent() -> [Chip]
-    {
-        return self.chipsInBet;
-    }
-    // Le joueur pert sa mise
-    func Loose()
-    {
-        self.chipsInBet.removeAll();
-    }
-    // Le joueur perd son assurance
-    func LoseInsurance()
-    {
-        self.insuranceContent.removeAll();
-    }
-    //Récupère la valeur totale du bet.
-    func GetValueBet()->Int{
-        var total = 0;
-        for c in self.chipsInBet{
-            total+=c.rawValue;
-        }
-        return total;
+        self.isInsurancePayed = true;
     }
 }
