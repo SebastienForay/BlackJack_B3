@@ -15,7 +15,7 @@ class GameViewController: UIViewController, UITextFieldDelegate
     @IBOutlet weak var txtBlueCard: UITextField!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var img: UIImageView!
-    
+    var bluecard:Int = 0;
     @IBAction func LaunchGame(sender: UIButton)
     {
         if let text = self.txtBlueCard.text where !text.isEmpty
@@ -25,13 +25,23 @@ class GameViewController: UIViewController, UITextFieldDelegate
             //On verifie que le nombre est bien dans le tas
             if(blueCardPos>0 && blueCardPos<312){
                 //On crée la partie avec la position de la carte bleu dans le tas
-                var game = Game(cardPos: blueCardPos, view: self);
-                game.Play();
+                //var game = Game(cardPos: blueCardPos, view: self);
+                //game.Play();
+                performSegueWithIdentifier("ToDeck", sender: blueCardPos)
             }else{
                 sendAlertNumber();
             }
         }else{
             sendAlertNumber();
+        }
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ToDeck"
+        {
+            if let destinationVC = segue.destinationViewController as? DeckViewController {
+                destinationVC.blueCard = sender as! Int;
+            }
         }
     }
     //Popup en cas d'erreur lors de la saisie de la position de la carte bleu.

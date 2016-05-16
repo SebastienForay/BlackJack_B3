@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F2E3EB01E46802379B98E32 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2E322ACE57740C3C76BC50 /* Game.swift */; };
 		F101574B1CE7E29900A352DA /* Bet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F101574A1CE7E29900A352DA /* Bet.swift */; };
+		FA4AAE101CEA650C00655A70 /* DeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4AAE0F1CEA650C00655A70 /* DeckViewController.swift */; };
 		FAC6983C1CDCDC1C008BD63B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6983B1CDCDC1C008BD63B /* Card.swift */; };
 		FAC6983E1CDCDC91008BD63B /* CardPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6983D1CDCDC91008BD63B /* CardPack.swift */; };
 		FAC698401CE07ACF008BD63B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6983F1CE07ACF008BD63B /* Player.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		1F2E322ACE57740C3C76BC50 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		F101574A1CE7E29900A352DA /* Bet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bet.swift; sourceTree = "<group>"; };
+		FA4AAE0F1CEA650C00655A70 /* DeckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckViewController.swift; sourceTree = "<group>"; };
 		FAC6983B1CDCDC1C008BD63B /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Card.swift; sourceTree = "<group>"; };
 		FAC6983D1CDCDC91008BD63B /* CardPack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPack.swift; sourceTree = "<group>"; };
 		FAC6983F1CE07ACF008BD63B /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = ../Player.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				FAC698411CE07C0A008BD63B /* Deck.swift */,
 				FAC6983F1CE07ACF008BD63B /* Player.swift */,
 				1F2E322ACE57740C3C76BC50 /* Game.swift */,
+				FA4AAE0F1CEA650C00655A70 /* DeckViewController.swift */,
 			);
 			path = BlackJack_B3;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				FAC698401CE07ACF008BD63B /* Player.swift in Sources */,
 				FAF7F6D51CD74029003A0386 /* AppDelegate.swift in Sources */,
 				1F2E3EB01E46802379B98E32 /* Game.swift in Sources */,
+				FA4AAE101CEA650C00655A70 /* DeckViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
