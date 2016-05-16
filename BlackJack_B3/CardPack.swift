@@ -36,7 +36,7 @@ class CardPack
     func GetFirstCard() -> Card
     {
         var cardToGive : Card;
-        cardToGive = cards.first!;
+        cardToGive = self.cards[0];
         
         self.cards.removeAtIndex(0);
         

@@ -23,19 +23,35 @@ class DeckViewController: UIViewController
         launchGame();
     }
     
+    @IBOutlet weak var playerCard1: UIImageView!
+    @IBOutlet weak var playerCard2: UIImageView!
+    @IBOutlet weak var playerCard3: UIImageView!
+    @IBOutlet weak var playerCard4: UIImageView!
+    @IBOutlet weak var playerCard5: UIImageView!
+    
+    @IBOutlet weak var croupierCard1: UIImageView!
+    @IBOutlet weak var croupierCard2: UIImageView!
+    @IBOutlet weak var croupierCard3: UIImageView!
+    @IBOutlet weak var croupierCard4: UIImageView!
+    @IBOutlet weak var croupierCard5: UIImageView!
     
     override func viewDidLoad()
     {
         super.viewDidLoad();
-        //print("BLUE CARD ===\(blueCard)");
-        //On crée la partie avec la position de la carte bleu dans le tas
+        self.game = Game(cardPos: blueCard, view: self);
+        
+        game!.InitGame();
+        self.playerCard1.image = UIImage(data: NSData(contentsOfURL: NSURL(string: self.game!.player!.cards[0].image)!)!)
+        self.playerCard2.image = UIImage(data: NSData(contentsOfURL: NSURL(string: self.game!.player!.cards[1].image)!)!)
+        
+        self.croupierCard1.image = UIImage(data: NSData(contentsOfURL: NSURL(string: self.game!.croupier!.cards[0].image)!)!)
+        self.croupierCard2.image = UIImage(data: NSData(contentsOfURL: NSURL(string: self.game!.croupier!.cards[1].image)!)!)
     }
     func launchGame(){
-        var game = Game(cardPos: blueCard, view: self);
-        game.Play();
+        game!.Play();
     }
     func miser(){
-        
+        //self.game = Game(cardPos: blueCard, view: self);
     }
     
     func assurer(){

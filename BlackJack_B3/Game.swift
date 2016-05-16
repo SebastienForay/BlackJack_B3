@@ -27,16 +27,21 @@ class Game
         self.croupier = self.deck.players[1];
     }
     
+    func InitGame()
+    {
+        //TODO: Le joueur fait sa mise
+        self.player!.CreateBet(10);
+        
+        // Distribution des cartes
+        self.deck.CardsDistribution();
+    }
+    
     func Play()
     {
-        repeat
-        {
             // Le joueur fait sa mise
             
             //TODO Changer de systeme par rapport aux boutons
             view?.miser();
-            // Distribution des cartes
-            self.deck.CardsDistribution();
             
             // Si la première carte du croupier est un AS
             if(self.croupier!.cards[0].value == 1)
@@ -61,18 +66,16 @@ class Game
                     }
                 }
             }
-        
+        /*
             repeat
             {
                 // TODO: choix stay, card, ou leave
             }
             while self.player!.GetCardsTotalValue() < 21;
-            
+            */
+        
             // TODO: croupier retourne deuxieme carte
             // algo stay tant que moins de 16
-        }
-        // Répète tant que le total de lma mise du joueur est > 0
-        while self.player!.bet!.totalBetValue > 0;
         
         // TODO: Fin de la partie, GAME OVER
     }

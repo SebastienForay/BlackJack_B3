@@ -28,7 +28,7 @@ class Card
     //Valeur réel de la carte
     let realValue: Int;
     //Image de la carte
-    let image: String;
+    var image: String;
     
     //True si la carte est visible des joueurs (retournée)
     var visible: Bool;

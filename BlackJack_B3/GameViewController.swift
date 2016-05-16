@@ -14,7 +14,6 @@ class GameViewController: UIViewController, UITextFieldDelegate
 {
     @IBOutlet weak var txtBlueCard: UITextField!
     @IBOutlet weak var playButton: UIButton!
-    @IBOutlet weak var img: UIImageView!
     var bluecard:Int = 0;
     @IBAction func LaunchGame(sender: UIButton)
     {
@@ -53,9 +52,6 @@ class GameViewController: UIViewController, UITextFieldDelegate
         super.viewDidLoad();
         txtBlueCard.delegate = self;
         txtBlueCard.keyboardType = UIKeyboardType.NumberPad;
-        let url = NSURL(string: "http://deckofcardsapi.com/static/img/AS.png")
-        let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
-        self.img.image = UIImage(data: data!)
     }
     //Fonction pour ne prendre que les chiffres (delegate avec comparaison du charset src:http://stackoverflow.com/questions/26919854/how-can-i-declare-that-a-text-field-can-only-contain-an-integer
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {

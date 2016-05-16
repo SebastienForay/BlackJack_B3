@@ -25,6 +25,7 @@ class Player
         if(self.isCroupier && cards.count > 0)
         {
             cardToAdd.visible = false;
+            cardToAdd.image = "https://usercontent2.hubstatic.com/6089769_f260.jpg"
         }
         
         cards.append(cardToAdd);
