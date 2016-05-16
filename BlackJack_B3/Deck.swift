@@ -14,6 +14,8 @@ class Deck
     var players = [Player]();
     //Une table a un sabot
     var cardpack = CardPack();
+    // Défini si la carte rouge a été trouvée
+    var redCardFound: Bool = false;
     
     init(blueCardPos: Int)
     {
@@ -28,8 +30,24 @@ class Deck
         {
             for p in players
             {
-                p.GiveCard(cardpack.GetFirstCard());
+                p.GiveCard(self.GetCard());
             }
         }
+    }
+    
+    // Récupère la première carte du cardpack et vérifie si c'est la rouge qui indique la fin du jeu
+    func GetCard() -> Card
+    {
+        var retour: Card;
+        
+        retour = self.cardpack.GetFirstCard();
+        
+        if(retour.color == Color.Rouge)
+        {
+            self.redCardFound = true;
+            retour = self.cardpack.GetFirstCard();
+        }
+        
+        return retour;
     }
 }
